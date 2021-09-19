@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import "./App.css";
 import { Header } from "./components/Header/Header";
+import { Definations } from "./components/Definations/Definations";
 
 function App() {
   const [word, setWord] = useState("");
@@ -23,7 +24,7 @@ function App() {
 
   useEffect(() => {
     dictionaryApi();
-  }, []);
+  }, [word, category]);
   return (
     <div
       className="App"
@@ -38,7 +39,14 @@ function App() {
           justifyContent: "center",
         }}
       >
-        <Header />
+        <Header
+          word={word}
+          setWord={setWord}
+          setCategory={setCategory}
+          category={category}
+          setMeanings={setMeanings}
+        />
+        {meanings && <Definations meanings={meanings} />}
       </Container>
     </div>
   );
