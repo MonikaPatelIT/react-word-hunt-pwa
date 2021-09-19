@@ -36,7 +36,6 @@ function App() {
           display: "flex",
           flexDirection: "column",
           height: "100vh",
-          justifyContent: "center",
         }}
       >
         <Header
@@ -46,7 +45,7 @@ function App() {
           category={category}
           setMeanings={setMeanings}
         />
-        {meanings && <Definations meanings={meanings} />}
+        {meanings.length > 0 && <Definations meanings={meanings} />}
       </Container>
     </div>
   );

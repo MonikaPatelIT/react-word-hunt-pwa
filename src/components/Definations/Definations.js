@@ -7,8 +7,8 @@ export const Definations = ({ meanings }) => {
     <div className={styles.meanings}>
       {meanings.map((mean) =>
         mean.meanings.map((item) =>
-          item.definitions.map((def) => (
-            <div className={styles.meaning}>
+          item.definitions.map((def, index) => (
+            <div className={styles.meaning} key={index}>
               <b>{def.definition}</b>
               <hr className={styles.devider} />
               {def.example && (
