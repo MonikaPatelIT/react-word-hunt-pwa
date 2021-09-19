@@ -18,7 +18,7 @@ function App() {
       );
       setMeanings(data.data);
     } catch (error) {
-      console.log(error);
+      setMeanings([]);
     }
   };
 
